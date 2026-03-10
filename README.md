@@ -1,6 +1,9 @@
 # Environment Setup
 
 ```bash
+conda create -n api_sed python=3.9
+conda activate api_sed
+pip install torch==2.7.1 torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 pip install -r requirements_sed.txt
 ```
 
