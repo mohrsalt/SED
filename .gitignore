@@ -16,6 +16,8 @@ total_duration.py
 helpers/decode_danger.py
 requirements.txt
 resources/*.pt
+keyer
+keyer.pub
 # Created by .ignore support plugin (hsz.mobi)
 ### Python template
 # Byte-compiled / optimized / DLL files
