@@ -20,7 +20,7 @@ uvicorn api_endpoint:app --host 0.0.0.0 --port 8000
 ## Send a Request
 
 ```bash
-curl -X POST "http://localhost:8000/detect?threshold=0.5" \
+curl -X POST "http://localhost:8000/detect?threshold=0.5&min_length_sec=0" \
 -F "files=@/path/to/local/file1.mp3" \
 -F "files=@/path/to/local/file2.mp3"
 ```
@@ -33,6 +33,3 @@ curl -X POST "http://localhost:8000/detect?threshold=0.5" \
 
 2. The threshold value is configurable in the query string (?threshold=0.5). Please modify this number to adjust the detection sensitivity.
 
-curl -X POST "http://localhost:8000/detect?threshold=0.5" \
--F "files=@/home/users/ntu/bhargavi/crowd.mp3" \
--F "files=@/home/users/ntu/bhargavi/manshout.mp3"

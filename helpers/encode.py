@@ -208,7 +208,7 @@ class ManyHotEncoder:
                     [
                         self.labels[i],
                         self._frame_to_time(row[0]),
-                        self._frame_to_time(row[1]-1),
+                        self._frame_to_time(row[1]),
                         avg
                     ]
                 )

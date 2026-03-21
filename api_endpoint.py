@@ -197,6 +197,7 @@ app= FastAPI(title="Sound Event Detection API", version="1.0.0")
 def detect(
     files:List[UploadFile] =File(...,description="wav audio files"), 
     threshold:float =Query(0.5,ge=0.0,le=1.0,description="per-class framewise threshold"), 
+    min_length_sec:float = Query(0,description="minimum length of predicted segment to be considered valid"), 
     classifier_id=Query(CLASSIFIER_ID),
     model_version=Query(MODEL_VERSION)
 ):
@@ -219,6 +220,8 @@ def detect(
             class_name=row["event_label"]
             start_t=row["onset"]
             end_t=row["offset"]
+            if(end_t-start_t<min_length_sec):
+                continue
             avg=row["score"]
             label_items.append(
                     LabelOut(
